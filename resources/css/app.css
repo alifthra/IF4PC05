@@ -16,6 +16,7 @@
     --primary-dark:#872f2f;
     --secondary:#ffddc5;
     --secondary-dark:#c87b64;
+    --background: #fafaf5;
     --white:#ffffff;
     --gray:#818181;
     --black:#111827;
@@ -34,9 +35,10 @@ body{
     background:#fafaf5;
 }
 
-.wrapper{
-    display:flex;
-    min-height:100vh;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .sidebar{
@@ -45,6 +47,12 @@ body{
     color:white;
     display:flex;
     flex-direction:column;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 0;
 }
 
 .logo{
@@ -52,6 +60,7 @@ body{
     display:flex;
     align-items:center;
     gap:10px;
+    color:white;
     border-bottom:1px solid rgba(255,255,255,.2);
 }
 
@@ -76,16 +85,32 @@ body{
 
 .content{
     flex:1;
+    min-width: 0;
+    padding: 0;
 }
 
 .topbar{
-    height:70px;
+    height:80px;
     background:var(--primary);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:0 25px;
     box-shadow:0 2px 10px rgba(0,0,0,.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.user-menu{
+    background:var(--white);
+    color:black;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
 }
 
 .page{
@@ -115,6 +140,22 @@ body{
     padding:8px 15px;
     border-radius:5px;
     cursor:pointer;
+}
+
+.btn-tambah {
+    background: var(--secondary-dark);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-tambah:hover {
+    background: var(--primary);
 }
 
 .form-group{
