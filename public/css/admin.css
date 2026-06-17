@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --admin-brand: #C46B6C;
+    --admin-surface: #FFDDC5;
+    --admin-bg: #FFF9F4;
+    --admin-stroke: #648E6F;
+    --admin-btn: #7A3E3E;
+    --admin-text: #1a1a1a;
+    --admin-subtitle: #9B6B4A;
+    --admin-white: #ffffff;
+    --admin-sidebar-width: 220px;
+}
+
+body.admin-body {
+    min-height: 100vh;
+    background: var(--admin-bg);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--admin-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+.admin-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    background: var(--admin-brand);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.admin-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-header-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--admin-white);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.admin-header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-header-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--admin-text);
+}
+
+.admin-header-user {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.admin-header-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--admin-text);
+}
+
+.admin-header-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid var(--admin-text);
+    background: var(--admin-white);
+    color: var(--admin-text);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Body wrap */
+.admin-body-wrap {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: var(--admin-sidebar-width);
+    flex-shrink: 0;
+    padding: 1.25rem 1rem;
+    background: var(--admin-brand);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-sidebar-action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(90, 45, 45, 0.45);
+    color: var(--admin-white);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-sidebar-action svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.admin-nav-link {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    color: var(--admin-white);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.admin-nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.admin-nav-link.is-active {
+    background: rgba(255, 255, 255, 0.22);
+    font-weight: 600;
+}
+
+/* Main content */
+.admin-main {
+    flex: 1;
+    padding: 1.75rem 2rem 2rem;
+    overflow-x: hidden;
+}
+
+.admin-page-header {
+    margin-bottom: 1.5rem;
+}
+
+.admin-page-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.admin-page-subtitle {
+    font-size: 0.875rem;
+    color: var(--admin-subtitle);
+}
+
+/* Stats cards */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 130px;
+    padding: 1.1rem 1.15rem;
+    background: var(--admin-surface);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(196, 107, 108, 0.12);
+}
+
+.admin-stat-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.admin-stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.admin-stat-btn {
+    align-self: center;
+    margin-top: auto;
+    padding: 0.4rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--admin-btn);
+    color: var(--admin-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-stat-btn:hover {
+    opacity: 0.92;
+}
+
+/* Chart section */
+.admin-chart-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.admin-chart-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.admin-chart-filter {
+    padding: 0.45rem 2rem 0.45rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: var(--admin-white);
+    font-size: 0.8125rem;
+    color: var(--admin-text);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+}
+
+.admin-chart-box {
+    height: 340px;
+    padding: 1.25rem 1rem 0.75rem;
+    background: var(--admin-white);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 992px) {
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-body-wrap {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.85rem 1rem;
+    }
+
+    .admin-sidebar-action {
+        width: auto;
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .admin-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .admin-main {
+        padding: 1.25rem 1rem 1.5rem;
+    }
+
+    .admin-chart-box {
+        height: 280px;
+    }
+}
